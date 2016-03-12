@@ -1,31 +1,43 @@
 body, html{
 	background-image: url('/img/background.jpg');
 	background-size: cover;
-	font-family: 'Cabin', sans-serif;
+	font-family: 'Josefin Sans', sans-serif;
 }
 body h1{
-	font-family: 'Merriweather', serif;
+	font-family: 'Dosis', sans-serif;
 	color:#fff;
+	text-align: center;
+	font-weight: 800;
+	font-size: 3.5em;
+	letter-spacing: 0.2em;
+}
+body h4{
+	color:#008000;
+	font-family: 'Dosis', sans-serif;
+	text-align: center;
+	font-weight: 600;
+	font-size: 2em;
 }
 .wrap {
-  max-width: 500px;
-  margin: 70px auto;
+  max-width: 550px;
+  margin: 10px auto;
 }
 .myShips{
-	width: 300px;
-	margin:20px auto;
+	max-width: 250px;
+	float:left;
+	padding:0 0;
+	margin:10px auto;
 }
 div {
   box-sizing: border-box;
 }
 .mySquare{
-	width:40px;
-	height:38px;
+	width:25px;
+	height:25px;
 	background:#F0EFF5;
   	border: 1px solid #010086;
   	display: inline-block;
   	margin-bottom: -6px;
-  	margin-left: -6px;
   	transition: all ease .2s;
 }
 .square,
@@ -36,7 +48,6 @@ div {
   border: 1px solid #010086;
   display: inline-block;
   margin-bottom: -6px;
-  margin-left: -6px;
   transition: all ease .2s;
 }
 .square {
@@ -63,8 +74,9 @@ div {
 
 button {
   display: block;
-  width: 110px;
-  height: 50px;
+  height: 70px;
+  margin-top: 20px;
+  width:100%;
   background-color: green;
   border:none;
   color: #fff;
@@ -113,8 +125,11 @@ button:hover {
   background-color: green;
   color: #fff;
   box-shadow: 2px 2px 20px black;
-  width: 110px;
-  font-family: 'Cabin', sans-serif;
+  height: 230px;
+  font-size: 1.5em;
+  margin-top: 15px;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
 }
 .stat-message div {
   padding: 10px;
@@ -125,4 +140,22 @@ button:hover {
 }
 form {
   margin-top: 150px;
+}
+
+.main{
+	background: rgba(255, 255, 255, 0.65);
+	box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.5);
+	border-radius: 0.2em;
+}
+#chat{
+	padding:1em 3em;
+	vertical-align: scroll;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size:1.3em;
+	color:#000;
+	height:200px;
+}
+#input{
+	padding:1.2em 1em;
+	font-family: 'Josefin Sans', sans-serif;
 }

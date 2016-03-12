@@ -47,7 +47,7 @@ $(document).ready(function() {
     function addMyFields(fields) {
       var divSquare = '<div class="mySquare"></div>';
       for (var i = 0; i < fields; i++) {
-          $('#mySide').append(divSquare);
+          $('.myShips').append(divSquare);
       };
     }
     //actions when button is clicked
