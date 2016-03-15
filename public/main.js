@@ -1,7 +1,6 @@
 $(document).ready(function() {
     var socket = io();
     var square = document.getElementsByClassName("square");
-    var num_ship = 10;
     var fields = 100;
     input = $('.msgInput');
     var nickInput = $('.usernameInput');

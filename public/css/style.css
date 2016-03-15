@@ -75,10 +75,10 @@ div {
 	width:25px;
 	height:25px;
 	background:#F0EFF5;
-  	border: 1px solid #010086;
-  	display: inline-block;
-  	margin-bottom: -6px;
-  	transition: all ease .2s;
+  border: 1px solid #010086;
+  display: inline-block;
+  margin-bottom: -6px;
+  transition: all ease .2s;
 }
 .square {
   width: 55px;
