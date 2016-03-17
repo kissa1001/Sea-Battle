@@ -2,7 +2,7 @@ $(document).ready(function() {
     var socket = io();
     var square = document.getElementsByClassName("square");
     var fields = 100;
-    input = $('.msgInput');
+    var input = $('.msgInput');
     var nickInput = $('.usernameInput');
     var loginPage = $('.login-form'); 
     var chatPage = $('.wrapper'); 

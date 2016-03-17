@@ -119,7 +119,6 @@ button:hover {
   background-color: green;
   color: #fff;
   box-shadow: 2px 2px 20px black;
-  height: 230px;
   font-size: 1.5em;
   margin-top: 15px;
   font-family: 'Josefin Sans', sans-serif;
@@ -158,22 +157,22 @@ form {
 }
 /*Scrollbar*/
 #chat::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
 
 #chat.thin::-webkit-scrollbar {
-    width: 2px;
+  width: 2px;
 }
 
 ::-webkit-scrollbar-track {
-    border-radius: 10px;
-    background: #eee;
+  border-radius: 10px;
+  background: #eee;
 }
 
 ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background: #888;
+  border-radius: 10px;
+  background: #888;
 }
 ::-webkit-scrollbar-thumb:window-inactive {
-    background: rgba(100,100,100,0.4); 
+  background: rgba(100,100,100,0.4); 
 }

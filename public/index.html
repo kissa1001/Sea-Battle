@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <head>
 	<meta charset="UTF-8">
 	<title>Sea Battle</title>
@@ -24,25 +24,23 @@
 					<div class="col-sm-6">
 						<div class="myShips"></div>
 					</div>
-					<div class="col-sm-6">
-						<div class="stat-message">
-							<div class="count">Ships destroyed:</div>
-							<div class="record">Your Ships:</div>
-							<button>Start Over!</button>
-						</div>
+					<div class="col-sm-6 stat-message">
+						<div class="count">Ships destroyed:</div>
+						<div class="record">Your Ships:</div>
+						<button>Start Over!</button>
 					</div>
 				</div>
 				<div class="row">
 					<div class="main">
-							<div id="chat">
-								<div id="messages">
-									<h4>Chat Box</h4>
-								</div>
-								<div id="status"></div>
+						<div id="chat">
+							<div id="messages">
+								<h4>Chat Box</h4>
 							</div>
-							<div id="input">
-								<input type="text" class="form-control msgInput" id="focusedInput" style="height:3em;background: rgba(255, 255, 255, 0.5);" type="text" placeholder="Type your message here...">
-							</div>				
+							<div id="status"></div>
+						</div>
+						<div id="input">
+							<input type="text" class="form-control msgInput" id="focusedInput" style="height:3em;background: rgba(255, 255, 255, 0.5);" type="text" placeholder="Type your message here...">
+						</div>				
 					</div>
 				</div>
 			</div>
@@ -57,3 +55,4 @@
 <script src="/socket.io/socket.io.js"></script>
 <script src="main.js"></script> 
 </body>
+</html>
