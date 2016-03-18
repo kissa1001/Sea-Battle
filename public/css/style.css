@@ -67,6 +67,7 @@ body h4{
 	float:left;
 	padding:0 0;
 	margin:10px auto;
+  z-index: 999;
 }
 div {
   box-sizing: border-box;
@@ -154,6 +155,24 @@ form {
 }
 #status{
 	color:#363636;
+}
+.chooseShips{
+  display:none;
+  height:100%;
+  width:100%;
+  position:absolute;
+  top:100px;
+  left:500px;
+  background:rgba(0,0,0,0.8);
+  color:#fff;
+  z-index: 99;
+  padding-top:3em;
+  padding-left:2em;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.5em;
+  top: 0;
+  left: 100;
+  margin: 0;
 }
 /*Scrollbar*/
 #chat::-webkit-scrollbar {

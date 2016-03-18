@@ -5,9 +5,10 @@ $(document).ready(function() {
     var input = $('.msgInput');
     var nickInput = $('.usernameInput');
     var loginPage = $('.login-form'); 
-    var chatPage = $('.wrapper'); 
+    var gamePage = $('.wrapper'); 
     var messages = $('#messages')
     var nickname;
+    var shipCounter = 10;
 
     //Scrollbar
     $("#chat").addClass("thin");
@@ -22,9 +23,10 @@ $(document).ready(function() {
         $("#chat").addClass("thin");
     });
 
+    var myBoard = new SeaBattleBoard('10x10');
+    var myBoardUI = new SeaBattleBoardUI(myBoard);
     //add empty fields to our game
     addEmptyFields(fields);
-    addMyFields(fields);
 
     //add empty fields to our game
     function addEmptyFields(fields) {
@@ -41,6 +43,16 @@ $(document).ready(function() {
       };
     }
 
+    $('.myShips').on('click', '.mySquare', function(e){
+        $(this).css("background", "blue");
+        shipCounter--;
+        $('.chooseShips').text(shipCounter + ' ships more!');
+        if(shipCounter === 0){
+            $('.chooseShips').text('Well Done!')
+            .fadeOut(2000);
+        }
+        //console.log($(event.target).data('board-position'));
+    });
     //Add message
     var addMessage = function(message) {
         messages.append('<div>' + message + '</div>');
@@ -54,7 +66,9 @@ $(document).ready(function() {
             if (nickname) {
                 loginPage.fadeOut();
                 socket.emit('join', nickname);
-                chatPage.show();
+                gamePage.show();
+                $('.chooseShips').fadeIn(1000)
+                .append('<p>Place your ships.You can place 10 ships</p>');
             }
         }     
         nickInput.on('keydown',function (event) {
