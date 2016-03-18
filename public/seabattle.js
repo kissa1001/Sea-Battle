@@ -20,7 +20,7 @@ SeaBattleBoard.prototype.setGrid = function(gridSize){
 
 var SeaBattleBoardUI = function(board){
     this.board = board;
-    this.$board = $('.myShips');
+    this.$board = $('.ships');
     this.populate();
 };
 
@@ -28,7 +28,7 @@ SeaBattleBoardUI.prototype.populate = function(){
     var self = this;
     this.board.grid.forEach(function(line, line_index) {
         line.forEach(function(cell, cell_index) {
-            $('<div class="mySquare"></div>')
+            $('<div class="square"></div>')
             .data('board-position', [line_index, cell_index])
             .appendTo(self.$board);
         });

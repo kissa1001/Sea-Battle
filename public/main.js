@@ -6,7 +6,9 @@ $(document).ready(function() {
     var nickInput = $('.usernameInput');
     var loginPage = $('.login-form'); 
     var gamePage = $('.wrapper'); 
-    var messages = $('#messages')
+    var messages = $('#messages');
+    var myShips = $('#myShips');
+    var otherShips = $('#otherShips');
     var nickname;
     var shipCounter = 10;
 
@@ -25,31 +27,16 @@ $(document).ready(function() {
 
     var myBoard = new SeaBattleBoard('10x10');
     var myBoardUI = new SeaBattleBoardUI(myBoard);
-    //add empty fields to our game
-    addEmptyFields(fields);
 
-    //add empty fields to our game
-    function addEmptyFields(fields) {
-      var divSquare = '<div class="square"></div>';
-      for (var i = 0; i < fields; i++) {
-          $('.wrap').append(divSquare);
-      };
-    }
-
-    function addMyFields(fields) {
-      var divSquare = '<div class="mySquare"></div>';
-      for (var i = 0; i < fields; i++) {
-          $('.myShips').append(divSquare);
-      };
-    }
-
-    $('.myShips').on('click', '.mySquare', function(e){
+    $(myShips).on('click', '.square', function(e){
+        e.preventDefault();
         $(this).css("background", "blue");
         shipCounter--;
         $('.chooseShips').text(shipCounter + ' ships more!');
         if(shipCounter === 0){
             $('.chooseShips').text('Well Done!')
             .fadeOut(2000);
+            $(myShips).off('click');
         }
         //console.log($(event.target).data('board-position'));
     });
