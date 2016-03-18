@@ -5,8 +5,8 @@ $(document).ready(function() {
     var fields = 100;
     var input = $('.msgInput');
     var nickInput = $('.usernameInput');
-    var loginPage = $('.login-form'); 
-    var gamePage = $('.wrapper'); 
+    var loginPage = $('.login-form');
+    var gamePage = $('.wrapper');
     var messages = $('#messages');
     var myShips = $('#myShips');
     var otherShips = $('#otherShips');
@@ -28,28 +28,8 @@ $(document).ready(function() {
 
 
     //Setting Boards
-    var myBoard = new SeaBattleBoard('10x10');
+    var myBoard = new SeaBattleBoard('10x10', 10);
     var myBoardUI = new SeaBattleBoardUI(myBoard);
-
-    $(myShips).on('click', '.square', function(e){
-        e.preventDefault();
-        $(this).css("background", "blue");
-        shipCounter--;
-        $('.chooseShips').text(shipCounter + ' ships more!');
-        if(shipCounter === 0){
-            $('.chooseShips').text('Well Done!')
-            .fadeOut(2000);
-            $(myShips).off('click');
-        }
-        var boardPos = $(event.target).data('board-position');
-        socket.emit('addBoardPos', boardPos);
-        //console.log($(event.target).data('board-position'));
-    });
-    // Add board position to other board
-    var addData = function(data){
-        $(event.target).data('board-position').appendTo($('#otherShips'));
-        console.log($(event.target).data('board-position'));
-    };
 
     //Add message
     var addMessage = function(message) {
@@ -70,10 +50,12 @@ $(document).ready(function() {
                 loginPage.fadeOut();
                 socket.emit('join', nickname);
                 gamePage.show();
-                $('.chooseShips').fadeIn(1000)
-                .append('<p>Place your ships.You can place 10 ships</p>');
+                $('.chooseShips').fadeIn(1000, function(){
+                    $(this).append('<p>Place your ships. You can place 10 ships</p>');
+                    myBoardUI.setShips();
+                });
             }
-        }     
+        }
         nickInput.on('keydown',function (event) {
             // When the client hits ENTER on their keyboard
             if (event.which === 13) {

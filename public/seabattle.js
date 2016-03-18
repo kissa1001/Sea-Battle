@@ -2,7 +2,8 @@ var EMPTY = 0,
     SHIP = 1,
     FIRE = 2;
 
-var SeaBattleBoard = function(gridSize){
+var SeaBattleBoard = function(gridSize, ships){
+    this.ships = ships;
     // gridSize should be something like '10x10'
     this.setGrid(gridSize);
 };
@@ -18,19 +19,20 @@ SeaBattleBoard.prototype.setGrid = function(gridSize){
     });
 };
 
-var SeaBattleBoardUI = function(board){
-    this.board = board;
-    this.$board = $('.ships');
-    this.populate();
+SeaBattleBoard.prototype.setShip = function(position){
+    var line = position[0];
+    var cell = position[1];
+    this.grid[line][cell] = SHIP;
 };
 
-SeaBattleBoardUI.prototype.populate = function(){
-    var self = this;
-    this.board.grid.forEach(function(line, line_index) {
-        line.forEach(function(cell, cell_index) {
-            $('<div class="square"></div>')
-            .data('board-position', [line_index, cell_index])
-            .appendTo(self.$board);
+SeaBattleBoard.prototype.shipCount = function() {
+    var counter = 0;
+    this.grid.forEach(function(line){
+        line.forEach(function(cell) {
+            if (cell === SHIP) {
+                counter += 1;
+            }
         });
     });
+    return counter;
 };
