@@ -20,6 +20,10 @@ io.on('connection', function (socket) {
         console.log('Connected users: ' + connectCounter); 
     });
 
+    socket.on('addBoardPos', function(data){
+        socket.broadcast.emit('addBoardPos', data);
+    })
+
     socket.on('disconnect', function() {
         connectCounter--;
         console.log('Connected users: ' + connectCounter);

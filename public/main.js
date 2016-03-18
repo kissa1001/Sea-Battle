@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    //Variables
     var socket = io();
     var square = document.getElementsByClassName("square");
     var fields = 100;
@@ -25,6 +26,8 @@ $(document).ready(function() {
         $("#chat").addClass("thin");
     });
 
+
+    //Setting Boards
     var myBoard = new SeaBattleBoard('10x10');
     var myBoardUI = new SeaBattleBoardUI(myBoard);
 
@@ -38,12 +41,25 @@ $(document).ready(function() {
             .fadeOut(2000);
             $(myShips).off('click');
         }
+        var boardPos = $(event.target).data('board-position');
+        socket.emit('addBoardPos', boardPos);
         //console.log($(event.target).data('board-position'));
     });
+    // Add board position to other board
+    var addData = function(data){
+        $(event.target).data('board-position').appendTo($('#otherShips'));
+        console.log($(event.target).data('board-position'));
+    };
+
     //Add message
     var addMessage = function(message) {
         messages.append('<div>' + message + '</div>');
     };
+
+    socket.on('addBoardPos', addData);
+
+
+//Chat Box Part
 
     //Create username
     socket.on('connect', function(data){
