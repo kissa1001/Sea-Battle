@@ -36,7 +36,7 @@ $(document).ready(function() {
         messages.append('<div>' + message + '</div>');
     };
 
-    socket.on('addBoardPos', addData);
+    // socket.on('addBoardPos', addData);
 
 
 //Chat Box Part
